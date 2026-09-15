@@ -19,15 +19,12 @@ export const name = "Ritesh";
 
 export const age = 22;
 
-
-
 import { name, age } from "./user.js";
 
 console.log(name);
 
 console.log(age);
-
-
+```
 
 ### 2 Default Export — Definition
 
@@ -49,3 +46,4 @@ export default name;
 import name from "./user.js";
 
 console.log(name);
+```
