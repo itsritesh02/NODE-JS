@@ -1,0 +1,59 @@
+## Synchronous and Asynchronous Error Handling
+
+---
+
+### Synchronous Error Handling
+
+Synchronous code executes line by line.
+
+We use `try...catch` to handle errors in synchronous code.
+
+Example:
+
+try {
+  const data = JSON.parse("wrong data");
+} catch (error) {
+  console.log("Error:", error.message);
+}
+
+---
+
+### Asynchronous Error Handling
+
+Asynchronous operations complete later.
+
+We handle asynchronous errors using `.catch()` with Promises or `try...catch` with async/await.
+
+Example:
+
+async function getData() {
+  try {
+    const response = await fetch("wrong-url");
+    const data = await response.json();
+
+    console.log(data);
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
+}
+
+getData();
+
+---
+
+### Difference
+
+Synchronous:
+- Code executes immediately.
+- Errors are commonly handled using `try...catch`.
+
+Asynchronous:
+- Operation completes later.
+- Promises use `.catch()`.
+- Async/Await uses `try...catch`.
+
+---
+
+### Interview Answer
+
+"Synchronous errors occur during the normal execution of code and can be handled using try-catch. Asynchronous errors occur during asynchronous operations and can be handled using catch with Promises or try-catch with async/await."
